@@ -5,6 +5,6 @@ dockerfilePath = "Dockerfile"
 [deploy]
 # Railway exposes port 6080 (noVNC) as the public HTTP URL
 healthcheckPath = "/"
-healthcheckTimeout = 300
+healthcheckTimeout = 600
 restartPolicyType = "on_failure"
 restartPolicyMaxRetries = 3
