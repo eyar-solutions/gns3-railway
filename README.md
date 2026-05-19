@@ -2,7 +2,7 @@
 
 Run a full network lab in the cloud — no local install, no powerful hardware. Deploy GNS3 to [Railway](https://railway.app) in one click and open it in your browser.
 
-[![Deploy on Railway](https://railway.app/button.svg)](https://railway.com/new/template?template=https://github.com/YOUR_GITHUB_USERNAME/gns3-railway)
+[![Deploy on Railway](https://railway.app/button.svg)](https://railway.com/new/template?template=https://github.com/eyar-solutions/gns3-railway)
 
 ---
 

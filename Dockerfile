@@ -36,6 +36,4 @@ RUN chmod +x /entrypoint.sh /usr/local/bin/pull-images.sh /usr/local/bin/add-ima
 # 3080 = GNS3 REST API (used by add-image.sh)
 EXPOSE 6080 3080
 
-VOLUME ["/gns3"]
-
 ENTRYPOINT ["/entrypoint.sh"]
