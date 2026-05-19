@@ -15,8 +15,8 @@ RUN apt-get update && apt-get install -y software-properties-common \
     gns3-server gns3-gui \
     && rm -rf /var/lib/apt/lists/*
 
-# ubridge needs setuid root to manage network interfaces
-RUN chmod u+s /usr/bin/ubridge 2>/dev/null || true
+# ubridge and dynamips need setuid root to manage network interfaces
+RUN chmod u+s /usr/bin/ubridge /usr/bin/dynamips 2>/dev/null || true
 
 # GNS3 storage — mount a Railway volume here for persistence
 RUN mkdir -p /gns3/images /gns3/projects /gns3/appliances /gns3/configs /etc/gns3
