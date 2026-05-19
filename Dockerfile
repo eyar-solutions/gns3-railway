@@ -2,18 +2,17 @@ FROM ubuntu:22.04
 
 ENV DEBIAN_FRONTEND=noninteractive
 
-# Base system tools + display stack + VNC + process manager
-RUN apt-get update && apt-get install -y \
-    software-properties-common \
+# Add GNS3 PPA first — ubridge, dynamips, vpcs are only available there
+RUN apt-get update && apt-get install -y software-properties-common \
+    && add-apt-repository ppa:gns3/ppa \
+    && apt-get update && apt-get install -y \
     python3 python3-pip \
     dynamips vpcs ubridge docker.io \
     wget curl gettext-base iproute2 net-tools \
     supervisor \
     xvfb x11vnc novnc websockify \
     xfonts-base dbus-x11 \
-    && add-apt-repository ppa:gns3/ppa \
-    && apt-get update \
-    && apt-get install -y gns3-server gns3-gui \
+    gns3-server gns3-gui \
     && rm -rf /var/lib/apt/lists/*
 
 # ubridge needs setuid root to manage network interfaces
