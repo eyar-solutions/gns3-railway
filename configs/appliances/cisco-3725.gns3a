@@ -1,0 +1,47 @@
+{
+    "name": "Cisco 3725",
+    "category": "router",
+    "description": "Cisco 3725 router emulated by Dynamips (no KVM required). Supports IOS 12.4 features: OSPF, BGP, EIGRP, IS-IS, MPLS, VPN. User must supply a licensed IOS .bin image.",
+    "vendor_name": "Cisco",
+    "vendor_url": "https://www.cisco.com",
+    "documentation_url": "https://www.cisco.com/c/en/us/products/routers/3700-series-multiservice-access-routers/index.html",
+    "product_name": "Cisco 3725",
+    "product_url": "https://www.cisco.com",
+    "registry_version": 4,
+    "status": "stable",
+    "maintainer": "gns3-railway",
+    "usage": "Upload IOS .bin to /gns3/images/IOS/ then add this appliance in GNS3. Set idlepc value after first boot (right-click → Idle-PC). Recommended RAM: 256 MB.",
+    "symbol": "router",
+    "port_name_format": "f{port0}/{port1}",
+    "port_segment_size": 2,
+    "dynamips": {
+        "platform": "c3725",
+        "chassis": "",
+        "ram": 256,
+        "nvram": 256,
+        "startup_config": "ios_base_startup-config.txt",
+        "wic0": "WIC-1T",
+        "wic1": "WIC-1T",
+        "slot0": "GT96100-FE",
+        "slot1": "NM-1FE-TX",
+        "slot2": "NM-4T"
+    },
+    "images": [
+        {
+            "filename": "c3725-adventerprisek9-mz.124-15.T14.bin",
+            "version": "124-15.T14",
+            "md5sum": "5df26c5fd5b7b1d93e98e7a02553ee7c",
+            "filesize": 55701504,
+            "download_url": "https://www.cisco.com"
+        }
+    ],
+    "versions": [
+        {
+            "name": "124-15.T14",
+            "idlepc": "0x602467a4",
+            "images": {
+                "image": "c3725-adventerprisek9-mz.124-15.T14.bin"
+            }
+        }
+    ]
+}

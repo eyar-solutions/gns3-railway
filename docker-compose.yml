@@ -1,0 +1,18 @@
+services:
+  gns3:
+    build: .
+    ports:
+      - "6080:6080"   # noVNC web UI
+      - "3080:3080"   # GNS3 REST API (for add-image.sh)
+    volumes:
+      - gns3-data:/gns3
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      - GNS3_USER=${GNS3_USER:-admin}
+      - GNS3_PASSWORD=${GNS3_PASSWORD:-admin}
+      - GNS3_AUTH=${GNS3_AUTH:-True}
+    privileged: true   # required for ubridge and Docker-in-Docker
+    restart: unless-stopped
+
+volumes:
+  gns3-data:

@@ -1,0 +1,34 @@
+{
+    "name": "OpenWRT Firewall",
+    "category": "firewall",
+    "description": "OpenWRT running in Docker. Acts as a lightweight firewall/NAT gateway with LuCI web interface on port 80. Supports iptables/nftables, VLAN, DHCP, and basic routing. Use eth0 as WAN and eth1+ as LAN.",
+    "vendor_name": "OpenWRT Project",
+    "vendor_url": "https://openwrt.org",
+    "documentation_url": "https://openwrt.org/docs/start",
+    "product_name": "OpenWRT",
+    "product_url": "https://openwrt.org",
+    "registry_version": 4,
+    "status": "stable",
+    "maintainer": "gns3-railway",
+    "usage": "Default login: root / no password. LuCI web UI accessible via aux console HTTP on port 80. eth0 = WAN (DHCP), eth1 = LAN (192.168.1.1/24). Run 'fw4 -t rules' to inspect nftables rules.",
+    "symbol": "firewall",
+    "port_name_format": "eth{0}",
+    "port_segment_size": 0,
+    "docker": {
+        "adapters": 4,
+        "image": "openwrtorg/rootfs:x86-64-23.05.3",
+        "start_command": "/sbin/init",
+        "environment": "",
+        "console_type": "telnet",
+        "console_http_port": 80,
+        "console_http_path": "/cgi-bin/luci",
+        "extra_volumes": ["/etc/config", "/etc/firewall.user"]
+    },
+    "images": [],
+    "versions": [
+        {
+            "name": "23.05.3",
+            "images": {}
+        }
+    ]
+}

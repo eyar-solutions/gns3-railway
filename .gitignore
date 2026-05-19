@@ -1,0 +1,6 @@
+.env
+*.bin
+*.qcow2
+*.vmdk
+*.ova
+/gns3/

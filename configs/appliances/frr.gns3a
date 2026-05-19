@@ -1,0 +1,32 @@
+{
+    "name": "FRRouting",
+    "category": "router",
+    "description": "FRRouting (FRR) is a free and open-source Internet routing protocol suite. Supports BGP, OSPF, OSPFv3, IS-IS, RIP, EIGRP, NHRP, PIM, LDP, and MPLS. Use as a Cisco/Juniper substitute when KVM is not available.",
+    "vendor_name": "FRRouting Project",
+    "vendor_url": "https://frrouting.org",
+    "documentation_url": "https://docs.frrouting.org/",
+    "product_name": "FRRouting",
+    "product_url": "https://frrouting.org",
+    "registry_version": 4,
+    "status": "stable",
+    "maintainer": "gns3-railway",
+    "usage": "Default credentials: none (enter 'vtysh' for CLI). Each interface maps to eth{N}. Edit /etc/frr/frr.conf or use 'vtysh' for live config.",
+    "symbol": "router",
+    "port_name_format": "eth{0}",
+    "port_segment_size": 0,
+    "docker": {
+        "adapters": 8,
+        "image": "frrouting/frr:latest",
+        "start_command": "/sbin/tini -- /usr/lib/frr/docker-start",
+        "environment": "container=docker",
+        "console_type": "telnet",
+        "extra_volumes": ["/etc/frr"]
+    },
+    "images": [],
+    "versions": [
+        {
+            "name": "latest",
+            "images": {}
+        }
+    ]
+}

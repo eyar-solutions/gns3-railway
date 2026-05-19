@@ -1,0 +1,32 @@
+{
+    "name": "Alpine Host",
+    "category": "guest",
+    "description": "Minimal Alpine Linux container. Use as a host/endpoint in lab topologies. Includes curl, ping, traceroute, iperf3, nmap, tcpdump, and ssh client. Ideal for traffic generation and verification.",
+    "vendor_name": "Alpine Linux",
+    "vendor_url": "https://alpinelinux.org",
+    "documentation_url": "https://wiki.alpinelinux.org",
+    "product_name": "Alpine Linux",
+    "product_url": "https://alpinelinux.org",
+    "registry_version": 4,
+    "status": "stable",
+    "maintainer": "gns3-railway",
+    "usage": "Shell auto-starts on console. Set IP with: ip addr add 10.0.0.1/24 dev eth0 && ip route add default via 10.0.0.254",
+    "symbol": "pc",
+    "port_name_format": "eth{0}",
+    "port_segment_size": 0,
+    "docker": {
+        "adapters": 1,
+        "image": "gns3-railway/alpine-host:latest",
+        "start_command": "/bin/sh",
+        "environment": "",
+        "console_type": "telnet",
+        "extra_volumes": []
+    },
+    "images": [],
+    "versions": [
+        {
+            "name": "latest",
+            "images": {}
+        }
+    ]
+}

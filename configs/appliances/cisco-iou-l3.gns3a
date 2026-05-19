@@ -1,0 +1,43 @@
+{
+    "name": "Cisco IOU L3 Switch",
+    "category": "switch",
+    "description": "Cisco IOS on Unix (IOU) L3 image — a dedicated Layer 3 switch binary that runs natively on Linux (no KVM required). Combines full L2 switching (VLANs, STP, VTP, EtherChannel) with L3 routing (OSPF, BGP, EIGRP, IS-IS, PBR) and inter-VLAN routing via SVIs. This is a completely separate binary from both the IOU L2 switch and the Dynamips IOS router. Requires a valid iourc license file.",
+    "vendor_name": "Cisco",
+    "vendor_url": "https://www.cisco.com",
+    "documentation_url": "https://www.cisco.com",
+    "product_name": "Cisco IOU L3",
+    "product_url": "https://www.cisco.com",
+    "registry_version": 4,
+    "status": "stable",
+    "maintainer": "gns3-railway",
+    "usage": "1) Upload your IOU L3 binary to /gns3/images/IOU/. 2) Ensure your iourc license file is at /gns3/images/IOU/iourc. 3) In GNS3 GUI go to Edit > Preferences > IOS on Unix > IOU Devices > New, select the binary and set type to L3. Interfaces: e0/0-e0/3 per card. Use 'ip routing' in global config to enable L3. Configure SVIs with 'interface vlan X' for inter-VLAN routing.",
+    "symbol": "multilayer_switch",
+    "port_name_format": "e{segment0}/{port0}",
+    "port_segment_size": 4,
+    "iou": {
+        "ethernet_adapters": 4,
+        "serial_adapters": 0,
+        "ram": 256,
+        "nvram": 128,
+        "startup_config": "iou_l3_base_startup-config.text",
+        "use_default_iou_values": true,
+        "l1_keepalives": false
+    },
+    "images": [
+        {
+            "filename": "i86bi_linuxl3-adventerprisek9-ms.155-2.T.bin",
+            "version": "155-2.T",
+            "md5sum": "",
+            "filesize": 0,
+            "download_url": "https://www.cisco.com"
+        }
+    ],
+    "versions": [
+        {
+            "name": "155-2.T",
+            "images": {
+                "image": "i86bi_linuxl3-adventerprisek9-ms.155-2.T.bin"
+            }
+        }
+    ]
+}

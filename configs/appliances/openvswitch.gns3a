@@ -1,0 +1,32 @@
+{
+    "name": "Open vSwitch",
+    "category": "switch",
+    "description": "Open vSwitch (OVS) is a production-quality multilayer virtual switch. Supports VLANs (802.1Q), STP/RSTP, LACP, VXLAN, OpenFlow, and QoS. Use as a managed L2/L3 switch in lab topologies without KVM.",
+    "vendor_name": "Open vSwitch",
+    "vendor_url": "https://www.openvswitch.org",
+    "documentation_url": "https://docs.openvswitch.org",
+    "product_name": "Open vSwitch",
+    "product_url": "https://www.openvswitch.org",
+    "registry_version": 4,
+    "status": "stable",
+    "maintainer": "gns3-railway",
+    "usage": "Use 'ovs-vsctl show' to inspect the switch. Add ports: 'ovs-vsctl add-port br0 eth1'. Set VLAN: 'ovs-vsctl set port eth1 tag=10'. Each adapter maps to eth{N}. Bridge 'br0' is created automatically.",
+    "symbol": "ethernet_switch",
+    "port_name_format": "eth{0}",
+    "port_segment_size": 0,
+    "docker": {
+        "adapters": 16,
+        "image": "gns3/openvswitch:latest",
+        "start_command": "",
+        "environment": "",
+        "console_type": "telnet",
+        "extra_volumes": []
+    },
+    "images": [],
+    "versions": [
+        {
+            "name": "latest",
+            "images": {}
+        }
+    ]
+}

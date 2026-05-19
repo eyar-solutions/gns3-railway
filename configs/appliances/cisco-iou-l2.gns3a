@@ -1,0 +1,43 @@
+{
+    "name": "Cisco IOU L2 Switch",
+    "category": "switch",
+    "description": "Cisco IOS on Unix (IOU) L2 image — a dedicated Layer 2 switch binary that runs natively on Linux (no KVM required). Provides full Catalyst switch features: VLANs, STP/RSTP/MSTP, VTP, port-security, EtherChannel/LACP, and inter-VLAN routing via SVIs. Requires a separate IOU L2 binary and a valid iourc license file.",
+    "vendor_name": "Cisco",
+    "vendor_url": "https://www.cisco.com",
+    "documentation_url": "https://www.cisco.com",
+    "product_name": "Cisco IOU L2",
+    "product_url": "https://www.cisco.com",
+    "registry_version": 4,
+    "status": "stable",
+    "maintainer": "gns3-railway",
+    "usage": "1) Upload your IOU L2 binary to /gns3/images/IOU/. 2) Place your iourc license file at /gns3/images/IOU/iourc. 3) In GNS3 GUI go to Edit > Preferences > IOS on Unix > IOU Devices > New and select your binary. Interfaces: e0/0-e0/3 (first card), e1/0-e1/3 (second card), etc.",
+    "symbol": "ethernet_switch",
+    "port_name_format": "e{segment0}/{port0}",
+    "port_segment_size": 4,
+    "iou": {
+        "ethernet_adapters": 4,
+        "serial_adapters": 0,
+        "ram": 256,
+        "nvram": 128,
+        "startup_config": "iou_l2_base_startup-config.text",
+        "use_default_iou_values": true,
+        "l1_keepalives": false
+    },
+    "images": [
+        {
+            "filename": "i86bi_linux_l2-adventerprisek9-ms.SSA.high_iron_20180510.bin",
+            "version": "SSA.high_iron_20180510",
+            "md5sum": "",
+            "filesize": 0,
+            "download_url": "https://www.cisco.com"
+        }
+    ],
+    "versions": [
+        {
+            "name": "SSA.high_iron_20180510",
+            "images": {
+                "image": "i86bi_linux_l2-adventerprisek9-ms.SSA.high_iron_20180510.bin"
+            }
+        }
+    ]
+}
